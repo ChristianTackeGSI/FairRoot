@@ -113,7 +113,7 @@ class FairRadGridManager
      * @return Pointer to the singleton FairRadGridManager object, created
      * with FairRadGridManager::FairRadGridManager().
      */
-    static FairRadGridManager* Instance();
+    [[deprecated("Maybe use FairMCApplcation::GetRadGridMan()")]] static FairRadGridManager* Instance();
 };
 
 #endif

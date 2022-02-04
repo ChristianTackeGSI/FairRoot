@@ -63,6 +63,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   * If you need it, speak up NOW.
   * It is disabled by default in this release.
   * It can still be enabled with `-DBUILD_MBS=ON`.
+* Deprecate `FairRadGridManager::Instance()`.
+  Consider using the `GetRadGridMan()` method on `FairMCApplcation`.
 
 ### Other Notable Changes
 * Consider calling `fairroot_check_root_cxxstd_compatibility()`
