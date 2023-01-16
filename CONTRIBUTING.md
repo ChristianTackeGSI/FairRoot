@@ -107,3 +107,34 @@ for (auto const& listEntry : *list) { /*...*/ } // avoid
 for (auto const& aVol : *volList) { /*...*/ }   // acceptable
 for (auto const& volume : *volumes) { /*...*/ } // ✓ prefer
 ```
+
+
+# Creating a new Release
+
+(This is basically for the release manager, so that we don't
+forget anything.)
+
+* Take a look at the
+  [Milestone](https://github.com/FairRootGroup/FairRoot/milestones)
+  for the release
+
+  Consider moving still open items to another milestone
+
+* Double check that the version number on the `project`
+  line in [CMakeLists.txt](CMakeLists.txt) is correct
+
+* Apply some final editorial changes to the
+  [CHANGELOG](CHANGELOG.md) for the upcoming release
+  * Remove the `(UNRELEASED)` tag on the header
+  * Add the correct date
+  * Go over the list and re-order things/etc (classical
+    editorial changes)
+
+* Apply editorial changes to [README](README.md)
+
+* …
+
+* (Soon)
+  * Check that `codemeta.json` and friends have been
+    updated.
+  * Get a zenodo entry ready
