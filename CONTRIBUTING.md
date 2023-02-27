@@ -109,16 +109,20 @@ for (auto const& volume : *volumes) { /*...*/ } // ✓ prefer
 ```
 
 
-# Creating a new Release
+## R - Creating a new Release
 
 (This is basically for the release manager, so that we don't
 forget anything.)
 
-* Take a look at the
-  [Milestone](https://github.com/FairRootGroup/FairRoot/milestones)
-  for the release
+### R.1 Control the status
 
-  Consider moving still open items to another milestone
+Take a look at the [Milestone](https://github.com/FairRootGroup/FairRoot/milestones) for the release.
+
+Consider moving still open items to another milestone
+
+### R.2 Create a commit
+
+On the `v{x.y}_patches` branch with comment `Bump v{x.y.z}`:
 
 * Double check that the version number on the `project`
   line in [CMakeLists.txt](CMakeLists.txt) is correct
@@ -131,6 +135,33 @@ forget anything.)
     editorial changes)
 
 * Apply editorial changes to [README](README.md)
+
+### R.3 Push the patch to the repository:
+
+```
+git push origin v{x.y}_patches
+```
+
+### R.4 Create, control and push the new tag to the repository:
+
+```
+git tag v{x.y.z} -a -s
+git show v{x.y.z}
+git push origin v{x.y.z}
+```
+
+### R.5 Create a new realese on GitHub.
+
+### R.6 In certain cases the tag should be merged onto master:
+
+```
+git checkout master
+git merge origin/v{x.y}_patches
+git push mainrepo origin
+```
+
+The message, when prompted, should be `Merge v{x.y.z}`.
+The merge and push should not be forced.
 
 * …
 
